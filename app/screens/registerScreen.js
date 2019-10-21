@@ -10,7 +10,7 @@ export default class registerScreen extends Component {
       email: '',
       password: '',
     }
-   }
+   } 
 
   static navigationOptions = {title:"Register"}
 
@@ -37,29 +37,36 @@ export default class registerScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <HeaderSection title="Register" />
+        <HeaderSection title="Registrar" />
         <View style={styles.form}>
-          <Text>Email</Text>
+          <Text style={{fontWeight: 'bold'}}>Email</Text>
           <TextInput
             style={styles.input}
             placeholder={"Digite seu email"}
             onChangeText={value => this.setState({ email: value })}
           />
-          <Text>Senha</Text>
+          <Text style={{fontWeight: 'bold'}}>Senha</Text>
           <TextInput
+            secureTextEntry={true}
             style={styles.input}
             placeholder={"Digite sua senha"}
             onChangeText={value => this.setState({ password: value })}
           />
+          <View
+            style={{display:'flex',flexDirection:'row',width:"100%", justifyContent: 'space-around'}}
+            >
           <Button
             title="Cadastrar"
             style={{ width: "100%" }}
+            color="#0c4367"
             onPress={() => this.register(this.state.email, this.state.password)}
           />
           <Button
             title="Ja tenho login"
+            color="#0c4367"
             onPress={() => this.props.navigation.navigate('Login')}
           />
+          </View>
         </View>
       </View>
     );

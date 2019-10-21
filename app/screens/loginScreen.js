@@ -29,9 +29,9 @@ export default class loginScreen extends Component {
       .then(()=>{
         this.props.navigation.navigate('Chat')
         alert("Login aceito, você vai ser redirecionado")
-      })
+      }).catch((error) => alert("OPS: ", error.toString(error)))
     } catch (error) 
-    {
+    {  
       alert(error.toString(error));
     }
   }
@@ -56,6 +56,7 @@ export default class loginScreen extends Component {
           <Button
             title="Entrar"
             style={{ width: "100%" }}
+            color="#0c4367"
             onPress={() => this.login(this.state.email, this.state.password)}
           ></Button>
         </View>

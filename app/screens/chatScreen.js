@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    height: "70%",
+    height: "67%",
     padding: 10,
     backgroundColor: "#FAF9EA"
   },
